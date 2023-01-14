@@ -54,8 +54,18 @@ public class MyAccountPage {
         Login.click();
     }
 
+    //Vérification de message Error connexion
+    public void VerifMsgError(){
+        WebElement verfError = driver.findElement(By.xpath("//*[@id=\"login_button_container\"]/div/form/div[3]"));
+        String MsgError= verfError.getText();
+        System.out.println(MsgError);
+        if (MsgError.equals("Error: the password you entered for the username automaticiens@yopmail.com is incorrect.")) {
 
-
+            System.out.println("Le message Error est affiché correctement");
+        } else {
+            System.out.println("Le text n'est pas affiché correctement");
+        }
+    }
 
 
 }
