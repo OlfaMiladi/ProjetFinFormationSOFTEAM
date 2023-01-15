@@ -18,8 +18,10 @@ public class ConnexionKo extends Hooks {
         accountConec.CliquerBoutonLogin();
     }
 
-    public void VerifError(){
+    public void verifError(){
         MyAccountPage Errormsg = new MyAccountPage(driver);
         Errormsg.VerifMsgError();
     }
+
+
 }

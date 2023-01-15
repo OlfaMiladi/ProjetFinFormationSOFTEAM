@@ -67,5 +67,16 @@ public class MyAccountPage {
         }
     }
 
+    //Le bon fonctionnement de la case à cocher REMEMBER ME
+
+    public void FonctionRememberMe (){
+        WebElement RememberMe = driver.findElement(By.xpath("//*[@id=\"customer_login\"]/div[1]/form/p[3]/label"));
+        RememberMe.click();
+        //Continuer en mettant la méthode se déconnecter et se reconnecter
+    }
+
+    //Vérification de la présence des pages : Dashboard, Orders, Download, Adresses, Account Details, Logout
+
+
 
 }
