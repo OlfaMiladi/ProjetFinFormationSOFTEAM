@@ -2,7 +2,7 @@ package Tests;
 
 import commun.Hooks;
 import org.testng.annotations.Test;
-import pages.MyAccountPage;
+import Pages.MyAccountPage;
 
 import java.sql.Driver;
 

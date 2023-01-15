@@ -2,7 +2,7 @@ package Tests;
 
 import commun.Hooks;
 import org.testng.annotations.Test;
-import pages.MyAccountPage;
+import Pages.MyAccountPage;
 
 public class ConnexionKo extends Hooks {
     String Val2 = "automaticiens@yopmail.com";
