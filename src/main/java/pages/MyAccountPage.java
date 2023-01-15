@@ -1,4 +1,4 @@
-package pages;
+package Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -55,6 +55,7 @@ public class MyAccountPage {
     }
 
     //Vérification de message Error connexion
+
     public void VerifMsgError(){
         WebElement verfError = driver.findElement(By.xpath("//*[@id=\"login_button_container\"]/div/form/div[3]"));
         String MsgError= verfError.getText();
@@ -65,6 +66,7 @@ public class MyAccountPage {
         } else {
             System.out.println("Le text n'est pas affiché correctement");
         }
+
     }
 
     //Le bon fonctionnement de la case à cocher REMEMBER ME
@@ -76,6 +78,7 @@ public class MyAccountPage {
     }
 
     //Vérification de la présence des pages : Dashboard, Orders, Download, Adresses, Account Details, Logout
+
 
 
 
