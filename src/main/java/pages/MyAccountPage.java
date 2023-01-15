@@ -55,6 +55,7 @@ public class MyAccountPage {
     }
 
     //Vérification de message Error connexion
+
     public void VerifMsgError(){
         WebElement verfError = driver.findElement(By.xpath("//*[@id=\"login_button_container\"]/div/form/div[3]"));
         String MsgError= verfError.getText();
@@ -65,7 +66,9 @@ public class MyAccountPage {
         } else {
             System.out.println("Le text n'est pas affiché correctement");
         }
+
     }
+
 
 
 }
