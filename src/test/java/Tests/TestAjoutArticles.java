@@ -31,6 +31,8 @@ public class TestAjoutArticles extends Hooks {
     driver.navigate().back();
     produit.clickreadmore();
     produit.affoutstock();
+    produit.clickiconebasket();
+    produit.affpanier();
 
 
 

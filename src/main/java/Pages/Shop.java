@@ -63,6 +63,20 @@ public class Shop {
         Assert.assertTrue(message3.isDisplayed(), "Message non affiché");
     }
 
+    //cartcontents
+    public void clickiconebasket(){
+
+        WebElement btclickicone = driver.findElement(By.xpath("//span[@class='cartcontents']"));
+        btclickicone.click();
+
+    }
+
+    public void affpanier(){
+        WebElement mess = driver.findElement(By.xpath("//*[contains(text(), 'Basket Totals')]"));
+        Assert.assertTrue(mess.isDisplayed(), "Message non affiché");
+
+    }
+
 
 
 }
