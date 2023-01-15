@@ -10,29 +10,36 @@ public class TestAjoutArticles extends Hooks {
     String Val2 = "olfa.benameur@gmail.com";
     String MPD ="olfa1234/";
 
+    String mail = "olfa@yopmailcom";
+
 
 @Test
-    public void testajout() {
+    public void testAjoutA() {
 
     MyAccountPage accountConec = new MyAccountPage(driver);
 
     Shop produit = new Shop(driver);
 
+
     accountConec.CliqueMyaccount();
     accountConec.SaisirmailCo(Val2);
     accountConec.SaisirMDPCo(MPD);
     accountConec.CliquerBoutonLogin();
-    produit.clickshop();
-    produit.afffiltrecategorie();
-    produit.afffiltreprice();
-    produit.clickaddbasket();
+    produit.clickShop();
+    produit.affFiltreCategorie();
+    produit.affFiltrePrice();
+    produit.clickAddBasket();
     //produit.affviewbasket();
-    produit.clickviewbasket();
+    produit.clickViewBasket();
     driver.navigate().back();
-    produit.clickreadmore();
-    produit.affoutstock();
-    produit.clickiconebasket();
-    produit.affpanier();
+    produit.clickReadMore();
+    produit.affOutStock();
+    produit.clickIconeBasket();
+    produit.affPanier();
+    produit.clickShop();
+    produit.saisirSubscribe(mail);
+    produit.clickSubscribe();
+
 
 
 

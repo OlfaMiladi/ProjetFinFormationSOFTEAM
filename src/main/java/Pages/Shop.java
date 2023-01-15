@@ -15,68 +15,95 @@ public class Shop {
 
     //cliquer sur la page SHOP
 
-    public void clickshop() {
-        WebElement btclickrm = driver.findElement(By.xpath("//a[@href='https://practice.automationtesting.in/shop/']"));
-        btclickrm.click();
+    public void clickShop() {
+        WebElement btClickRM = driver.findElement(By.xpath("//a[@href='https://practice.automationtesting.in/shop/']"));
+        btClickRM.click();
     }
 
 
     //verification des articles OUT OF STOCK //
 
-    public void clickreadmore() {
-        WebElement btclickrm = driver.findElement(By.xpath("//a[@data-product_id='163']"));
-        btclickrm.click();
+    public void clickReadMore() {
+        WebElement btClickRM = driver.findElement(By.xpath("//a[@data-product_id='163']"));
+        btClickRM.click();
     }
 
-    public void affoutstock() {
-        WebElement message1 = driver.findElement(By.xpath("//*[contains(text(), 'Out of stock')]"));
-        Assert.assertTrue(message1.isDisplayed(), "Message non affiché");
+    public void affOutStock() {
+        WebElement message = driver.findElement(By.xpath("//*[contains(text(), 'Out of stock')]"));
+        Assert.assertTrue(message.isDisplayed(), "Message non affiché");
     }
 
     //Verification des articles en stock (verif du titre view basket!!!)
 
-    public void clickaddbasket() {
-        WebElement btclickadd = driver.findElement(By.xpath("//a[@data-product_id='182']"));
-        btclickadd.click();
+    public void clickAddBasket() {
+        WebElement btClickAdd = driver.findElement(By.xpath("//a[@data-product_id='182']"));
+        btClickAdd.click();
     }
 
-        public void affviewbasket() {
-            WebElement message4 = driver.findElement(By.xpath("//*[contains(text(), 'View Basket')]"));
-            Assert.assertTrue(message4.isDisplayed(), "Message non affiché");
+        public void affViewBasket() {
+            WebElement message = driver.findElement(By.xpath("//*[contains(text(), 'View Basket')]"));
+            Assert.assertTrue(message.isDisplayed(), "Message non affiché");
         }
 
 
-    public void clickviewbasket() {
-        WebElement btclickview = driver.findElement(By.xpath("//a[@title='View Basket']"));
-        btclickview.click();
+    public void clickViewBasket() {
+        WebElement btClickView = driver.findElement(By.xpath("//a[@title='View Basket']"));
+        btClickView.click();
     }
 
     //verification des filtres
 
-    public void afffiltreprice() {
-        WebElement message2 = driver.findElement(By.xpath("//*[contains(text(), 'Filter by price')]"));
-        Assert.assertTrue(message2.isDisplayed(), "Message non affiché");
+    public void affFiltrePrice() {
+        WebElement message = driver.findElement(By.xpath("//*[contains(text(), 'Filter by price')]"));
+        Assert.assertTrue(message.isDisplayed(), "Message non affiché");
     }
 
-    public void afffiltrecategorie() {
-        WebElement message3 = driver.findElement(By.xpath("//*[contains(text(), 'Product Categories')]"));
-        Assert.assertTrue(message3.isDisplayed(), "Message non affiché");
+    public void affFiltreCategorie() {
+        WebElement message = driver.findElement(By.xpath("//*[contains(text(), 'Product Categories')]"));
+        Assert.assertTrue(message.isDisplayed(), "Message non affiché");
     }
 
     //cartcontents
-    public void clickiconebasket(){
+    public void clickIconeBasket(){
 
-        WebElement btclickicone = driver.findElement(By.xpath("//span[@class='cartcontents']"));
-        btclickicone.click();
+        WebElement btClickIcone = driver.findElement(By.xpath("//span[@class='cartcontents']"));
+        btClickIcone.click();
 
     }
 
-    public void affpanier(){
+    public void affPanier(){
         WebElement mess = driver.findElement(By.xpath("//*[contains(text(), 'Basket Totals')]"));
         Assert.assertTrue(mess.isDisplayed(), "Message non affiché");
 
     }
 
+    // souscribe a la newsletter
+
+    public void saisirSubscribe(String mail){
+        WebElement email = driver.findElement(By.xpath("//input[@type='email']"));
+        email.sendKeys(mail);
+    }
+
+    public void clickSubscribe(){
+
+        WebElement btCSub = driver.findElement(By.xpath("//input[@type='submit']"));
+        btCSub.click();
+
+    }
+    //affichage du message d'erreur du newsletter
+    public void affMessErreur(){
+        //WebElement message = driver.findElement(By.xpath("//*[contains(text(), 'Please provide a valid email ')]"));
+
+        WebElement message = driver.findElement(By.xpath("//*[contains(text(), 'Please provide a valid email address.')]"));
+        Assert.assertTrue(message.isDisplayed(), "Message non affiché");
+
+    }
+
+   public void clickProduct(){
+       WebElement btcClick = driver.findElement(By.xpath("//a[@href='https://practice.automationtesting.in/product/html5-webapp-develpment/']"));
+       btcClick.click();
+
+   }
 
 
 }
