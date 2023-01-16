@@ -9,19 +9,16 @@ public class ConnexionKo extends Hooks {
     String MPD ="Admin*2017";
 
     @Test
-    public void  testconnOk () {
+    public void  testconnKo () {
 
         MyAccountPage accountConec = new MyAccountPage(driver);
         accountConec.CliqueMyaccount();
         accountConec.SaisirmailCo(Val2);
         accountConec.SaisirMDPCo(MPD);
         accountConec.CliquerBoutonLogin();
-    }
 
-    public void verifError(){
         MyAccountPage Errormsg = new MyAccountPage(driver);
         Errormsg.VerifMsgError();
     }
-
 
 }
