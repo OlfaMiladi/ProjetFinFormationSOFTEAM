@@ -6,6 +6,8 @@ import Pages.ShopPages;
 import commun.Hooks;
 import org.testng.annotations.Test;
 
+//cas de test .....
+
 public class TestVerifProduct extends Hooks {
     String Val2 = "olfa.benameur@gmail.com";
     String MPD ="olfa1234/";

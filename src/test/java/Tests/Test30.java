@@ -20,9 +20,10 @@ public class Test30 extends Hooks {
         accountConec.SaisirMDPCo(MPD);
         accountConec.CliquerBoutonLogin();
         produit.clickShop();
-        produit.clickAddBasket();
-       //
-        produit.clickViewBasket();
+        produit.clickAddBasket2();
+        produit.clickAddBasket1();
+
+        // produit.clickViewBasket();
         monproduit.verificationrecapitulatif();
         monproduit.verifierTitreQuantite();
         monproduit.verifierValeurQuantite();
