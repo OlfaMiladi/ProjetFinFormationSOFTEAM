@@ -19,8 +19,8 @@ public class Test30 extends Hooks {
         accountConec.SaisirMDPCo(MPD);
         accountConec.CliquerBoutonLogin();
         produit.clickShop();
-        produit.clickAddBasket();
-        produit.clickAddBasket();
+        produit.clickAddBasket2();
+        produit.clickAddBasket1();
         produit.clickViewBasket();
         Panier monproduit = new Panier(driver);
         monproduit.verificationrecapitulatif();
