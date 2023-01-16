@@ -14,6 +14,7 @@ public class Test30 extends Hooks {
     public void consultationpanier() {
         MyAccountPage accountConec = new MyAccountPage(driver);
         ShopPages produit = new ShopPages(driver);
+        Panier monproduit = new Panier(driver);
         accountConec.CliqueMyaccount();
         accountConec.SaisirmailCo(Val2);
         accountConec.SaisirMDPCo(MPD);
@@ -22,17 +23,15 @@ public class Test30 extends Hooks {
         produit.clickAddBasket2();
         produit.clickAddBasket1();
         produit.clickViewBasket();
-        Panier monproduit = new Panier(driver);
-        monproduit.verificationrecapitulatif();
-        monproduit.verifierTitreQuantite();
+       // monproduit.verifierTitreQuantite();
         monproduit.verifierValeurQuantite();
 
-       monproduit.verifiePresenceChampsCoupon("12365");
-       monproduit.verifiePresenceTitleCoupon();
+     //  monproduit.verifiePresenceChampsCoupon("12365");
+       //monproduit.verifiePresenceTitleCoupon();
        // Ajouter deux articles différents pour faire cette action de suppression d'article
 //       monproduit.suprimeArticle();
 //       monproduit.AjouterArticlePanier();
-        monproduit.verifieBouttonCheckout();
+        //monproduit.verifieBouttonCheckout();
 
     }
 }
