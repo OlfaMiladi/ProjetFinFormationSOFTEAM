@@ -28,7 +28,8 @@ public class TestAjoutArticles extends Hooks {
     produit.clickShop();
     produit.affFiltreCategorie();
     produit.affFiltrePrice();
-    produit.clickAddBasket();
+    produit.clickAddBasket2();
+    produit.clickAddBasket1();
     //produit.affviewbasket();
     produit.clickViewBasket();
     driver.navigate().back();
