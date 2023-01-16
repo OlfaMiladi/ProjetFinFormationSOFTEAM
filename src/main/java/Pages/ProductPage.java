@@ -72,6 +72,9 @@ public class ProductPage {
         nombreExemplaire.sendKeys(nbex);
     }
 
-
+    public void clickViewBasketProduct() {
+        WebElement btClickView = driver.findElement(By.xpath("//a[@class='button wc-forward']"));
+        btClickView.click();
+    }
 
     }

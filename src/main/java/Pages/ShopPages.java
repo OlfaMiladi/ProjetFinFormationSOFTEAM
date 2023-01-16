@@ -77,11 +77,11 @@ public class ShopPages {
 
     }
 
-    public void affPanier(){
+   /* public void affPanier(){
         WebElement mess = driver.findElement(By.xpath("//*[contains(text(), 'Basket Totals')]"));
         Assert.assertTrue(mess.isDisplayed(), "Message non affiché");
 
-    }
+    }*/
 
     // souscribe a la newsletter
 

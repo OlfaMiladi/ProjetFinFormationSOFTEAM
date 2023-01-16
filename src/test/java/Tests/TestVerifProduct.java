@@ -23,10 +23,10 @@ public class TestVerifProduct extends Hooks {
         ProductPage prod = new ProductPage(driver);
 
 
-        accountConec.CliqueMyaccount();
-        accountConec.SaisirmailCo(Val2);
-        accountConec.SaisirMDPCo(MPD);
-        accountConec.CliquerBoutonLogin();
+        //accountConec.CliqueMyaccount();
+        //accountConec.SaisirmailCo(Val2);
+        //accountConec.SaisirMDPCo(MPD);
+        //accountConec.CliquerBoutonLogin();
         produit.clickShop();
         produit.clickProduct();
         prod.affImage();
@@ -34,9 +34,12 @@ public class TestVerifProduct extends Hooks {
         prod.affDetails();
         prod.affPrix();
         prod.affNbreExemplaire();
+        prod.saisirNbreExVoulu(nbex);
         prod.clickAddBouton();
         prod.affMessAddBasket();
-        prod.saisirNbreExVoulu(nbex);
+        prod.clickViewBasketProduct();
+
+
 
 
 
