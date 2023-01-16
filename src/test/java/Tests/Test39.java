@@ -25,9 +25,9 @@ public class Test39 extends Hooks {
         accountConec.SaisirMDPCo(MPD);
         accountConec.CliquerBoutonLogin();
         produit.clickShop();
-        produit.clickAddBasket();
+         // produit.clickAddBasket();
         //produit.affviewbasket();
-        produit.clickViewBasket();
+        //produit.clickViewBasket();
         Panier monpanier = new Panier(driver);
         monpanier.verifiechampssubscribehere("Softeam17@yopmail.com");
     }
