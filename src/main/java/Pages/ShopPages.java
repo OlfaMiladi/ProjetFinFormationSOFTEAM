@@ -122,5 +122,29 @@ public class ShopPages {
 
 
 
+    /*WebDriverWait w = new WebDriverWait(driver, 5);
+
+
+        try {
+        // identify element
+        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(XpathLiensOrders)));
+        System.out.println("titre est visible");
+    }
+        catch(NoSuchElementException n) {
+        System.out.println("titre is invisible");
+    }*/
+
+    public void verifChampSouscribe(){
+        WebElement champ = driver.findElement(By.xpath("//input[@type='email']"));
+        Assert.assertTrue(champ.isDisplayed(), "Champ non visible");
+    }
+    public void verifBoutonSouscribe(){
+        WebElement bouton = driver.findElement(By.xpath("//input[@type='submit']"));
+        Assert.assertTrue(bouton.isDisplayed(), "Bouton non visible");
+    }
+
+
+
+
 }
 

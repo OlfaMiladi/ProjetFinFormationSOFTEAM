@@ -1,6 +1,7 @@
 package Tests;
 
 import Pages.MyAccountPage;
+import Pages.Panier;
 import Pages.ProductPage;
 import Pages.ShopPages;
 import commun.Hooks;
@@ -8,7 +9,7 @@ import org.testng.annotations.Test;
 
 //cas de test .....
 
-public class TestVerifProduct extends Hooks {
+public class T34VerifProduct extends Hooks {
     String Val2 = "olfa.benameur@gmail.com";
     String MPD ="olfa1234/";
 
@@ -21,6 +22,8 @@ public class TestVerifProduct extends Hooks {
         ShopPages produit = new ShopPages(driver);
 
         ProductPage prod = new ProductPage(driver);
+
+        Panier basket = new Panier(driver);
 
 
         //accountConec.CliqueMyaccount();
@@ -38,6 +41,8 @@ public class TestVerifProduct extends Hooks {
         prod.clickAddBouton();
         prod.affMessAddBasket();
         prod.clickViewBasketProduct();
+        basket.affPanier();
+
 
 
 
