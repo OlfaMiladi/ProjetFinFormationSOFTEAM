@@ -1,6 +1,6 @@
 package Tests;
 
-import pages.MyAccountPage;
+import Pages.MyAccountPage;
 
 public class RememberMe extends ConnexionOk {
 

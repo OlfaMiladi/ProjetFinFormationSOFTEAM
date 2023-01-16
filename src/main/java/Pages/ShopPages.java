@@ -5,10 +5,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
-public class Shop {
+public class ShopPages {
     WebDriver driver;
 
-    public Shop(WebDriver driver) {
+    public ShopPages(WebDriver driver) {
         this.driver = driver;
     }
 
