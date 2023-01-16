@@ -3,6 +3,7 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 // CONSTRUCTOR
 public class MyAccountPage {
@@ -57,27 +58,53 @@ public class MyAccountPage {
     //Vérification de message Error connexion
 
     public void VerifMsgError(){
-        WebElement verfError = driver.findElement(By.xpath("//*[@id=\"login_button_container\"]/div/form/div[3]"));
+        WebElement verfError = driver.findElement(By.className("woocommerce-error"));
+
+
+
         String MsgError= verfError.getText();
-        System.out.println(MsgError);
-        if (MsgError.equals("Error: the password you entered for the username automaticiens@yopmail.com is incorrect.")) {
+        //System.out.println(MsgError);
+        Assert.assertTrue(MsgError.contains("Error: the password you entered for the username "), "Le message n'est pas affiché" );
+
+        /*
+        if (MsgError.equals("Error: the password you entered for the username automaticiens@yopmail.com is incorrect. Lost your password?")) {
 
             System.out.println("Le message Error est affiché correctement");
         } else {
             System.out.println("Le text n'est pas affiché correctement");
         }
 
+         */
+
     }
 
     //Le bon fonctionnement de la case à cocher REMEMBER ME
 
     public void FonctionRememberMe (){
-        WebElement RememberMe = driver.findElement(By.xpath("//*[@id=\"customer_login\"]/div[1]/form/p[3]/label"));
+        WebElement RememberMe = driver.findElement(By.xpath("//*[@id=\"rememberme\"]"));
         RememberMe.click();
-        //Continuer en mettant la méthode se déconnecter et se reconnecter
+        }
+
+    public void Verifmailrempli(){
+        WebElement MailRempli = driver.findElement(By.id("username"));
+
+        String expectedTitle = "automaticiens@yopmail.com";
+        String originalTitle = MailRempli.getText();
+        Assert.assertEquals(originalTitle, expectedTitle, "E-mail non affiché");
+        //System.out.println(originalTitle);
+        //originalTitle.contains(expectedTitle);
+        //Assert.assertTrue(MailRempli.isDisplayed(), "E-mail non affiché");
+
     }
 
-    //Vérification de la présence des pages : Dashboard, Orders, Download, Adresses, Account Details, Logout
+    //Déconnexion du compte
+
+    public void Sedeconnecter(){
+        WebElement Deconnexion = driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/nav/ul/li[6]/a"));
+        Deconnexion.click();
+
+    }
+        //Vérification de la présence des pages : Dashboard, Orders, Download, Adresses, Account Details, Logout
 
 
 

@@ -16,12 +16,9 @@ public class ConnexionKo extends Hooks {
         accountConec.SaisirmailCo(Val2);
         accountConec.SaisirMDPCo(MPD);
         accountConec.CliquerBoutonLogin();
-    }
 
-    public void verifError(){
         MyAccountPage Errormsg = new MyAccountPage(driver);
         Errormsg.VerifMsgError();
     }
-
 
 }

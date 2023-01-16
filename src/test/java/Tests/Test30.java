@@ -2,7 +2,7 @@ package Tests;
 
 import Pages.MyAccountPage;
 import Pages.Panier;
-import Pages.Shop;
+import Pages.ShopPages;
 import commun.Hooks;
 import org.testng.annotations.Test;
 
@@ -13,15 +13,15 @@ public class Test30 extends Hooks {
     @Test
     public void consultationpanier() {
         MyAccountPage accountConec = new MyAccountPage(driver);
-        Shop produit = new Shop(driver);
+        ShopPages produit = new ShopPages(driver);
         accountConec.CliqueMyaccount();
         accountConec.SaisirmailCo(Val2);
         accountConec.SaisirMDPCo(MPD);
         accountConec.CliquerBoutonLogin();
-        produit.clickshop();
-        produit.clickaddbasket();
-        produit.clickaddbasket();
-        produit.clickviewbasket();
+        produit.clickShop();
+        produit.clickAddBasket();
+        produit.clickAddBasket();
+        produit.clickViewBasket();
         Panier monproduit = new Panier(driver);
         monproduit.verificationrecapitulatif();
         monproduit.verifierTitreQuantite();

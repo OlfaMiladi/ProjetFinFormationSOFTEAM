@@ -2,7 +2,8 @@ package Tests;
 
 import Pages.MyAccountPage;
 import Pages.Panier;
-import Pages.Shop;
+
+import Pages.ShopPages;
 import commun.Hooks;
 import org.testng.annotations.Test;
 
@@ -17,16 +18,16 @@ public class Test39 extends Hooks {
     public void testVerifierSubscrireIci (){
         MyAccountPage accountConec = new MyAccountPage(driver);
 
-        Shop produit = new Shop(driver);
+        ShopPages produit = new ShopPages(driver);
 
         accountConec.CliqueMyaccount();
         accountConec.SaisirmailCo(Val2);
         accountConec.SaisirMDPCo(MPD);
         accountConec.CliquerBoutonLogin();
-        produit.clickshop();
-        produit.clickaddbasket();
+        produit.clickShop();
+        produit.clickAddBasket();
         //produit.affviewbasket();
-        produit.clickviewbasket();
+        produit.clickViewBasket();
         Panier monpanier = new Panier(driver);
         monpanier.verifiechampssubscribehere("Softeam17@yopmail.com");
     }

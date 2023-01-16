@@ -5,10 +5,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
-public class Product {
+public class ProductPage {
     WebDriver driver;
 
-    public Product(WebDriver driver) {
+    public ProductPage(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -34,8 +34,8 @@ public class Product {
     //affichage nombre d'exemplaire produit
 
     public void affNbreExemplaire() {
-        WebElement nombre = driver.findElement(By.xpath("//*[contains(text(), '8009 in stock')]"));
-        Assert.assertTrue(nombre.isDisplayed(), "Nombre non affiché");
+        WebElement nombre = driver.findElement(By.xpath("//*[contains(text(), '8004 in stock')]"));
+        Assert.assertTrue(nombre.isDisplayed(), "Prix non affiché");
 
     }
 

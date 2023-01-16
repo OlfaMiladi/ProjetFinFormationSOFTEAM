@@ -1,8 +1,8 @@
 package Tests;
 
 import Pages.MyAccountPage;
-import Pages.Product;
-import Pages.Shop;
+import Pages.ProductPage;
+import Pages.ShopPages;
 import commun.Hooks;
 import org.testng.annotations.Test;
 
@@ -16,9 +16,9 @@ public class TestVerifProduct extends Hooks {
     public void testVerifA(){
         MyAccountPage accountConec = new MyAccountPage(driver);
 
-        Shop produit = new Shop(driver);
+        ShopPages produit = new ShopPages(driver);
 
-        Product prod = new Product(driver);
+        ProductPage prod = new ProductPage(driver);
 
 
         accountConec.CliqueMyaccount();

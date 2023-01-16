@@ -1,7 +1,7 @@
 package Tests;
 
 import Pages.MyAccountPage;
-import Pages.Shop;
+import Pages.ShopPages;
 import commun.Hooks;
 import org.testng.annotations.Test;
 
@@ -18,7 +18,7 @@ public class TestAjoutArticles extends Hooks {
 
     MyAccountPage accountConec = new MyAccountPage(driver);
 
-    Shop produit = new Shop(driver);
+    ShopPages produit = new ShopPages(driver);
 
 
     accountConec.CliqueMyaccount();
