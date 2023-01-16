@@ -36,7 +36,7 @@ public class ShopPages {
     //Verification des articles en stock (verif du titre view basket!!!)
 
     public void clickAddBasket2() {
-        WebElement btClickAdd = driver.findElement(By.xpath("//a[@data-product_id='185']"));
+        WebElement btClickAdd = driver.findElement(By.xpath("//a[@data-product_id='165']"));
         btClickAdd.click();
     }
 
@@ -110,6 +110,7 @@ public class ShopPages {
        btcClick.click();
 
    }
+   public void verif
 
 
 
