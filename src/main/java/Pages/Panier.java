@@ -38,6 +38,7 @@ public class Panier {
         WebElement nbreArticle = driver.findElement(By.xpath("//span[@class='cartcontents']"));
         //     Cet élément correspond au nombre total des produits dans le tableau d'affichage
         WebElement quantiteAfficher = driver.findElement(By.name("cart[4c5bde74a8f110656874902f07378009][qty]"));
+        WebElement quanite2Afficher=driver.findElement(By.name("4c5bde74a8f110656874902f07378009"));
         // il recupere "le nombre + items" ex: "13 Items", et on veut que le nombre; donc on recupere le nmbre en utilisant
         // la méthode de séparation des textes en utilisant un tableau
         // il va recuperer la valeur de nbreArticle, et les séparer par un espace
@@ -46,7 +47,7 @@ public class Panier {
         // la methode utilisée accepte que les entiers
         int nbreArticleInt = Integer.parseInt(s[0]);
         // egalement cette methode permet de reconvertie la valeur de l'attribut value en entier
-        int quantiteAfficherInt = Integer.parseInt(quantiteAfficher.getAttribute("value"));
+        int quantiteAfficherInt = Integer.parseInt(quantiteAfficher.getAttribute("value1"));
         // application de la methode asserequals
         Assert.assertEquals(nbreArticleInt, quantiteAfficherInt, "False");
     }
@@ -92,4 +93,12 @@ public class Panier {
         public void verifieBouttonCheckout(){
             WebElement BouttonCheckout = driver.findElement(By.xpath("//*[@id=\"page-34\"]/div/div[1]/div/div/div/a"));
             BouttonCheckout.click();
-}}
+}
+    public void affPanier(){
+        WebElement mess = driver.findElement(By.xpath("//*[contains(text(), 'Basket Totals')]"));
+        Assert.assertTrue(mess.isDisplayed(), "Message non affiché");
+
+    }
+
+
+}
