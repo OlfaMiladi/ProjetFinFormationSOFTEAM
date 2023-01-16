@@ -7,32 +7,32 @@ import commun.Hooks;
 import org.testng.annotations.Test;
 
 public class Test30 extends Hooks {
-    String Val2 = "Softeam18@yopmail.com";
+    String Val2 = "Softeam17@yopmail.com";
     String MPD = "Softeam@1";
 
     @Test
     public void consultationpanier() {
         MyAccountPage accountConec = new MyAccountPage(driver);
-        Panier monproduit = new Panier(driver);
         ShopPages produit = new ShopPages(driver);
         accountConec.CliqueMyaccount();
         accountConec.SaisirmailCo(Val2);
         accountConec.SaisirMDPCo(MPD);
         accountConec.CliquerBoutonLogin();
         produit.clickShop();
-
         produit.clickAddBasket2();
         produit.clickAddBasket1();
-        //produit.clickViewBasket();
-//        monproduit.verificationrecapitulatif();
-//        monproduit.verifierTitreQuantite();
-      /*  monproduit.verifierValeurQuantite();
-        monproduit.verifiePresenceChampsCoupon("12365");
+        produit.clickViewBasket();
+        Panier monproduit = new Panier(driver);
+        monproduit.verificationrecapitulatif();
+        monproduit.verifierTitreQuantite();
+        monproduit.verifierValeurQuantite();
+
+       monproduit.verifiePresenceChampsCoupon("12365");
        monproduit.verifiePresenceTitleCoupon();
        // Ajouter deux articles différents pour faire cette action de suppression d'article
-     //   monproduit.suprimeArticle();
+//       monproduit.suprimeArticle();
 //       monproduit.AjouterArticlePanier();
-   //     monproduit.verifieBouttonCheckout();
-*/
+        monproduit.verifieBouttonCheckout();
+
     }
 }
