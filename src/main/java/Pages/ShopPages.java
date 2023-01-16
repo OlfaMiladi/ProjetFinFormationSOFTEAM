@@ -41,8 +41,8 @@ public class ShopPages {
     }
 
     public void clickAddBasket1() {
-        WebElement btClickAdd = driver.findElement(By.xpath("//a[@data-product_id='182']"));
-        btClickAdd.click();
+        WebElement btClickAdd2 = driver.findElement(By.xpath("//a[@data-product_id='182']"));
+        btClickAdd2.click();
     }
 
 
@@ -110,7 +110,7 @@ public class ShopPages {
        btcClick.click();
 
    }
-   public void verif
+//   public void verif
 
 
 
