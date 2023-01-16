@@ -1,5 +1,5 @@
 package Tests;
-<<<<<<< HEAD
+
 import Pages.MyAccountPage;
 import commun.Hooks;
 import org.testng.annotations.Test;
@@ -23,10 +23,4 @@ public class RememberMe extends Hooks {
         CaseRememberMe.Verifmailrempli();
 
     }
-=======
-
-public class RememberMe extends ConnexionOk {
->>>>>>> f0d3a70c236f69b725fdb9a988c31503c61103c3
-
-
 }

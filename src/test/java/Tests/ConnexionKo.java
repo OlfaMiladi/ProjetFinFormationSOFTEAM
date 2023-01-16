@@ -9,7 +9,7 @@ public class ConnexionKo extends Hooks {
     String MPD ="Admin*2017";
 
     @Test
-    public void  testconnOk () {
+    public void  testconnKo () {
 
         MyAccountPage accountConec = new MyAccountPage(driver);
         accountConec.CliqueMyaccount();

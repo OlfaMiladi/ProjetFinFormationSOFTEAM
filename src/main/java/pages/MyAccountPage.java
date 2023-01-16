@@ -59,9 +59,6 @@ public class MyAccountPage {
 
     public void VerifMsgError(){
         WebElement verfError = driver.findElement(By.className("woocommerce-error"));
-
-
-
         String MsgError= verfError.getText();
         //System.out.println(MsgError);
         Assert.assertTrue(MsgError.contains("Error: the password you entered for the username "), "Le message n'est pas affiché" );
@@ -104,7 +101,39 @@ public class MyAccountPage {
         Deconnexion.click();
 
     }
-        //Vérification de la présence des pages : Dashboard, Orders, Download, Adresses, Account Details, Logout
+
+    //Vérification des deux pavé Login et register sur MyacountPage
+
+    public void VerifPaveLogin (){
+        WebElement PaveLogin = driver.findElement(By.xpath("//*[@id=\"customer_login\"]/div[1]"));
+        String Login= PaveLogin.getText();
+        Assert.assertTrue(Login.contains("Login"), "Le Pavé Register n'est pas disponible" );
+
+    }
+
+    public void VerifPaveRegister(){
+        WebElement PaveRegister = driver.findElement(By.xpath("//*[@id=\"customer_login\"]/div[2]"));
+        String Register= PaveRegister.getText();
+        Assert.assertTrue(Register.contains("Register"), "Le Pavé Login n'est pas disponible" );
+    }
+/*
+    //Reinitialisation de mot de passe
+    public void ReinitialiserMDP (){
+        WebElement ReinitiaMDP= driver.findElement(By.xpath("//*[@id=\"customer_login\"]/div[1]/form/p[4]/a"));
+        ReinitiaMDP.click();
+
+    }
+    public void SaisirmailReinit(String Val2){
+        WebElement ReinitMAil = driver.findElement(By.id("user_login"));
+        ReinitMAil.sendKeys(Val2);
+    }
+    public void ResetPasseword(){
+        WebElement ResetMDP = driver.findElement(By.className("woocommerce-Button button"));
+       ResetMDP.click();
+    }*/
+
+
+    //Vérification de la présence des pages : Dashboard, Orders, Download, Adresses, Account Details, Logout
 
 
 
