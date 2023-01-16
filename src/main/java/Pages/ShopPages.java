@@ -35,10 +35,16 @@ public class ShopPages {
 
     //Verification des articles en stock (verif du titre view basket!!!)
 
-    public void clickAddBasket() {
-        WebElement btClickAdd = driver.findElement(By.xpath("//a[@data-product_id='182']"));
+    public void clickAddBasket2() {
+        WebElement btClickAdd = driver.findElement(By.xpath("//a[@data-product_id='165']"));
         btClickAdd.click();
     }
+
+    public void clickAddBasket1() {
+        WebElement btClickAdd1 = driver.findElement(By.xpath("//a[@data-product_id='182']"));
+        btClickAdd1.click();
+    }
+
 
         public void affViewBasket() {
             WebElement message = driver.findElement(By.xpath("//*[contains(text(), 'View Basket')]"));
@@ -47,7 +53,7 @@ public class ShopPages {
 
 
     public void clickViewBasket() {
-        WebElement btClickView = driver.findElement(By.xpath("//a[@title='View Basket']"));
+        WebElement btClickView = driver.findElement(By.xpath("//li[contains(@class,'post-182')]/a[@title='View Basket']"));
         btClickView.click();
     }
 
@@ -104,6 +110,16 @@ public class ShopPages {
        btcClick.click();
 
    }
+   public void clickImageProduit(){
+       WebElement btcClick = driver.findElement(By.xpath("//img[@title='Android Quick Start Guide']"));
+       btcClick.click();
+
+   }
+   public void clickTitreProduit(){
+       WebElement btcClick = driver.findElement(By.xpath("//img[@title='Android Quick Start Guide']"));
+       btcClick.click();
+   }
+
 
 
 }
