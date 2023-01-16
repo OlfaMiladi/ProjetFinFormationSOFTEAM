@@ -3,7 +3,7 @@ package Tests;
 import commun.Hooks;
 import org.testng.annotations.Test;
 
-public class Deconnexion extends Hooks {
+public class T28Deconnexion extends Hooks {
 
         String Val2 = "automaticiens@yopmail.com";
         String MPD ="Admin*2023";

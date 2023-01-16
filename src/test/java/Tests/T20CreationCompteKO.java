@@ -4,9 +4,7 @@ import commun.Hooks;
 import org.testng.annotations.Test;
 import Pages.MyAccountPage;
 
-import java.sql.Driver;
-
-public class CreationCompteKO extends Hooks {
+public class T20CreationCompteKO extends Hooks {
 
     String email2 = "automaticienSofteam@yopmail.com";
     String pword2 ="adminadmin";

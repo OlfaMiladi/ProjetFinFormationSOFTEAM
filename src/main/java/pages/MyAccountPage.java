@@ -135,7 +135,16 @@ public class MyAccountPage {
 
     //Vérification de la présence des pages : Dashboard, Orders, Download, Adresses, Account Details, Logout
 
-
-
+/*
+    //Souscription à la newsletter
+    public void verifChampSouscribe(){
+        WebElement champ = driver.findElement(By.xpath("//*[@id=\"mc4wp-form-1\"]/div[1]/p[1]/input"));
+        Assert.assertTrue(champ.isDisplayed(), "Champ non visible");
+    }
+    public void verifBoutonSouscribe(){
+        WebElement bouton = driver.findElement(By.xpath("//input[@type='submit']"));
+        Assert.assertTrue(bouton.isDisplayed(), "Bouton non visible");
+    }
+*/
 
 }
