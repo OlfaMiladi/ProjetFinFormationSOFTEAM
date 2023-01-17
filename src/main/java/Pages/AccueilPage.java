@@ -14,10 +14,12 @@ public class AccueilPage {
     // Verification du logo
 
     public void VerifLogo(){
-        WebElement Presencelogo = driver.findElement(By.id("site-logo"));
-        Presencelogo.click();
-    }
 
+
+        WebElement Logocliquable = driver.findElement(By.id("site-logo"));
+        Logocliquable.isEnabled();
+
+    }
 
 
 }

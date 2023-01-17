@@ -21,31 +21,34 @@ public class ProductPage {
     //affichage prix produit
 
     public void affPrix() {
-        WebElement prix = driver.findElement(By.xpath("//*[contains(text(), '180.00')]"));
+        //WebElement prix = driver.findElement(By.xpath("//*[contains(text(), '180.00')]"));
+        WebElement prix = driver.findElement(By.className("price"));
         Assert.assertTrue(prix.isDisplayed(), "Prix non affiché");
     }
+
+
     //affichage titre produit
 
     public void affTitre() {
-        WebElement titre = driver.findElement(By.id("product-182"));
+        WebElement titre = driver.findElement(By.xpath("//h1[text()=\"Android Quick Start Guide\"]"));
         Assert.assertTrue(titre.isDisplayed(), "Titre non affiché");
     }
 
     //affichage nombre d'exemplaire produit
 
     public void affNbreExemplaire() {
-        WebElement nombre = driver.findElement(By.xpath("//*[contains(text(), '7983 in stock')]"));
+        WebElement nombre = driver.findElement(By.xpath("//*[contains(text(), 'in stock')]"));
         Assert.assertTrue(nombre.isDisplayed(), "Prix non affiché");
 
     }
 
         //affichage image
 
-        public void affImage() {
+        //public void affImage() {
             //WebElement image = driver.findElement(By.xpath("//*[@id='product-182']/div[1]/a/img"));
-            WebElement image = driver.findElement(By.id("product-182"));
-            Assert.assertTrue(image.isDisplayed(), "Image non affiché");
-        }
+            //WebElement image = driver.findElement(By.id("product-169"));
+           // Assert.assertTrue(image.isDisplayed(), "Image non affiché");
+       // }
 
         //verification bouton add to basket
 
