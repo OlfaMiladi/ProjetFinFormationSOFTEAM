@@ -22,5 +22,7 @@ public class T33Verifpages extends Hooks {
         accountConec.VerifAddressesPage();
         accountConec.VerifAccountDetailsPage();
         accountConec.VerifLogoutPage();
+
+
     }
 }

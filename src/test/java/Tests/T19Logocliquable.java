@@ -1,5 +1,6 @@
 package Tests;
 
+import Pages.MyAccountDetailPage;
 import Pages.MyAccountPage;
 import com.beust.ah.A;
 import commun.Hooks;
