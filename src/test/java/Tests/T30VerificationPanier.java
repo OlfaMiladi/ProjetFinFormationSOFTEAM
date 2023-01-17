@@ -30,8 +30,11 @@ public class T30VerificationPanier extends Hooks {
        monproduit.verifiePresencePrix();
        monproduit.verifiePresenceTotal();
        monproduit.verifiePresencequantite();
+       monproduit.verifieTaxes();
+       monproduit.verifieTotalCommande();
         monproduit.suprimeArticle();
         monproduit.verifieBouttonCheckout();
+
 
     }
 }

@@ -1,4 +1,4 @@
-package pages;
+package Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -14,10 +14,12 @@ public class AccueilPage {
     // Verification du logo
 
     public void VerifLogo(){
-        WebElement Presencelogo = driver.findElement(By.id("site-logo"));
-        Presencelogo.click();
-    }
 
+
+        WebElement Logocliquable = driver.findElement(By.id("site-logo"));
+        Logocliquable.isEnabled();
+
+    }
 
 
 }

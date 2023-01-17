@@ -6,11 +6,11 @@ import Pages.MyAccountPage;
 
 public class T20CreationCompteKO extends Hooks {
 
-    String email2 = "automaticienSofteam@yopmail.com";
-    String pword2 ="adminadmin";
+    String email2 = "g17softeam7@yopmail.com";
+    String pword2 ="olfa1234/";
 
     @Test
-    public void  testconnKo (){
+    public void  testcreaKo (){
 
         MyAccountPage accountKo = new MyAccountPage(driver);
 
