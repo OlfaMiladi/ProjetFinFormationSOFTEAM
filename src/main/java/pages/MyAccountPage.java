@@ -135,12 +135,62 @@ public class MyAccountPage {
 
     //Vérification de la présence des pages : Dashboard, Orders, Download, Adresses, Account Details, Logout
 
+    public void VerifDashboardPage(){
+        WebElement Dashboard= driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/nav/ul/li[1]/a"));
+        String DBoard= Dashboard.getText();
+        Assert.assertTrue(DBoard.contains("Dashboard"), "La page Dashboard n'existe pas" );
+    }
+    public void DashboardPage(){
+        WebElement Dashboard= driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/nav/ul/li[1]/a"));
+        Dashboard.click();
+    }
+
+    public void VerifOrdersPage(){
+        WebElement POrders= driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/nav/ul/li[2]/a"));
+        String Orders= POrders.getText();
+        Assert.assertTrue(Orders.contains("Orders"), "La page Orders n'existe pas" );
+    }
+    public void OrdersPage(){
+        WebElement Orders= driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/nav/ul/li[2]/a"));
+        Orders.click();
+    }
+    public void VerifDownloadsPage(){
+        WebElement Downloads= driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/nav/ul/li[3]/a"));
+        String Dwld= Downloads.getText();
+        Assert.assertTrue(Dwld.contains("Downloads"), "La page Downloads n'existe pas" );
+    }
+    public void DownloadsPage(){
+        WebElement Downloads= driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/nav/ul/li[3]/a"));
+        Downloads.click();
+    }
+    public void VerifAddressesPage(){
+        WebElement Addresses= driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/nav/ul/li[4]/a"));
+        String Adsse= Addresses.getText();
+        Assert.assertTrue(Adsse.contains("Addresses"), "La page Addresses n'existe pas" );
+    }
+    public void AddressesPage(){
+        WebElement Adresses= driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/nav/ul/li[4]/a"));
+        Adresses.click();
+    }
     public void VerifAccountDetailsPage(){
         WebElement AccountDetails= driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/nav/ul/li[5]/a"));
-        AccountDetails.click();
         String AccDetails= AccountDetails.getText();
         Assert.assertTrue(AccDetails.contains("Account Details"), "La page Account Details n'existe pas" );
+    }
+    public void AccountDetailsPage(){
+        WebElement AccountDetails= driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/nav/ul/li[5]/a"));
+        AccountDetails.click();
            }
+
+    public void VerifLogoutPage(){
+        WebElement Logout= driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/nav/ul/li[6]/a"));
+        String LOut= Logout.getText();
+        Assert.assertTrue(LOut.contains("Logout"), "La page Logout n'existe pas" );
+    }
+    public void LogoutPage(){
+        WebElement Logout= driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/nav/ul/li[6]/a"));
+        Logout.click();
+    }
 
 
 
