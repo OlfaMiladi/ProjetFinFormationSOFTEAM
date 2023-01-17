@@ -30,6 +30,7 @@ public class Test39 extends Hooks {
         produit.clickViewBasket();
         Panier monpanier = new Panier(driver);
         monpanier.verifiechampssubscribehere("Softeam17@yopmail.com");
+
     }
 
 }

@@ -33,12 +33,12 @@ public class Panier {
         Assert.assertTrue(titreQuantite.isDisplayed(), "quantity n'est pas affiché");
     }
 
-    public void verifierValeurQuantite() {
+   /* public void verifierValeurQuantite() {
         //   l'element correspond au nombre total des produits dans le menu
         WebElement nbreArticle = driver.findElement(By.xpath("//span[@class='cartcontents']"));
         //     Cet élément correspond au nombre total des produits dans le tableau d'affichage
         WebElement quantiteAfficher = driver.findElement(By.name("cart[4c5bde74a8f110656874902f07378009][qty]"));
-        WebElement quanite2Afficher=driver.findElement(By.name("4c5bde74a8f110656874902f07378009"));
+        WebElement quanite2Afficher=driver.findElement(By.name("cart[4c5bde74a8f110656874902f07378009][qty]"));
         // il recupere "le nombre + items" ex: "13 Items", et on veut que le nombre; donc on recupere le nmbre en utilisant
         // la méthode de séparation des textes en utilisant un tableau
         // il va recuperer la valeur de nbreArticle, et les séparer par un espace
@@ -48,8 +48,10 @@ public class Panier {
         int nbreArticleInt = Integer.parseInt(s[0]);
         // egalement cette methode permet de reconvertie la valeur de l'attribut value en entier
         int quantiteAfficherInt = Integer.parseInt(quantiteAfficher.getAttribute("value1"));
+        int quantite2AfficherInt = Integer.parseInt(quanite2Afficher.getAttribute("value2"));
+         int d = quantite2AfficherInt + quantiteAfficherInt;
         // application de la methode asserequals
-        Assert.assertEquals(nbreArticleInt, quantiteAfficherInt, "False");
+        Assert.assertEquals(nbreArticleInt, d, "False");
     }
 
     // =======================  A vérifier avce le groupe ================================================================
@@ -67,18 +69,40 @@ public class Panier {
 */
 
     // A vérifier avec le groupe
-    public void AjouterArticlePanier(){
+    public void AjouterArticlePanier( String nbr2){
         WebElement quantite = driver.findElement(By.name("cart[4c5bde74a8f110656874902f07378009][qty]"));
-        int quantiteAfficherInt = Integer.parseInt(quantite.getAttribute("value")) + 1;
         quantite.clear();
-        quantite.sendKeys("value", String.valueOf(quantiteAfficherInt));
+        quantite.sendKeys(nbr2);
     }
+    public void AjouterArticle2Panier( String nbr){
+        WebElement quantite = driver.findElement(By.name("cart[9766527f2b5d3e95d4a733fcfb77bd7e][qty]"));
+        quantite.clear();
+        quantite.sendKeys(nbr);
+    }
+
+
 
     // ================================================================================================================================
     public void suprimeArticle() {
         WebElement suprimeboutton = driver.findElement(By.className("remove"));
         suprimeboutton.click();
 
+    }
+
+    public void verifiePresencePrix(){
+        WebElement presencePrix = driver.findElement(By.className("product-price"));
+        Assert.assertTrue(presencePrix.isDisplayed(), "prix n'est pas affiché");
+
+    }
+    public void verifiePresenceTotal(){
+        WebElement presencePrixTotal = driver.findElement(By.className("product-price"));
+        Assert.assertTrue(presencePrixTotal.isDisplayed(), "total n'est pas affiché");
+
+    }
+
+    public void verifiePresencequantite(){
+        WebElement Presencequantite = driver.findElement(By.className("product-quantity"));
+        Assert.assertTrue(Presencequantite.isDisplayed(), "quantite n'est pas affiché");
     }
 
     public void verifiePresenceChampsCoupon(String coupon){
@@ -91,8 +115,8 @@ public class Panier {
         Assert.assertTrue(titleCoupon.isDisplayed(), "Coupon n'est pas affiché");
     }
         public void verifieBouttonCheckout(){
-            WebElement BouttonCheckout = driver.findElement(By.xpath("//*[@id=\"page-34\"]/div/div[1]/div/div/div/a"));
-            BouttonCheckout.click();
+            WebElement BouttonBasket = driver.findElement(By.xpath("//*[@id=\"page-34\"]/div/div[1]/div[2]/div/div/a"));
+            BouttonBasket.click();
 }
     public void affPanier(){
         WebElement mess = driver.findElement(By.xpath("//*[contains(text(), 'Basket Totals')]"));
