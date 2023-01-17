@@ -1,8 +1,9 @@
 package Tests;
 
+
+import commun.Hooks;
 import Pages.MyAccountDetailPage;
 import Pages.MyAccountPage;
-import commun.Hooks;
 import org.testng.annotations.Test;
 
 public class T17AccountDétail extends Hooks {
