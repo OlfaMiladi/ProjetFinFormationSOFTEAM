@@ -135,10 +135,17 @@ public class MyAccountPage {
 
     //Vérification de la présence des pages : Dashboard, Orders, Download, Adresses, Account Details, Logout
 
+<<<<<<< HEAD
+    public void VerifDashboardPage(){
+        WebElement Dashboard= driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/nav/ul/li[1]/a"));
+        String DBoard= Dashboard.getText();
+        Assert.assertTrue(DBoard.contains("Dashboard"), "La page Dashboard n'existe pas" );
+=======
     public void VerifDashboardPage() {
         WebElement Dashboard = driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/nav/ul/li[1]/a"));
         String DBoard = Dashboard.getText();
         Assert.assertTrue(DBoard.contains("Dashboard"), "La page Dashboard n'existe pas");
+>>>>>>> 20be10897d15e09199badeafc9eb4259eef5f867
     }
 
     public void DashboardPage() {
@@ -178,6 +185,23 @@ public class MyAccountPage {
         WebElement Adresses = driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/nav/ul/li[4]/a"));
         Adresses.click();
     }
+<<<<<<< HEAD
+    public void VerifAccountDetailsPage(){
+        WebElement AccountDetails= driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/nav/ul/li[5]/a"));
+        String AccDetails= AccountDetails.getText();
+        Assert.assertTrue(AccDetails.contains("Account Details"), "La page Account Details n'existe pas" );
+    }
+    public void AccountDetailsPage(){
+        WebElement AccountDetails= driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/nav/ul/li[5]/a"));
+        AccountDetails.click();
+    public void AccountDetailsPage(){
+        WebElement AccountDetails= driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/nav/ul/li[5]/a"));
+        AccountDetails.click();
+       /*String AccDetails= AccountDetails.getText();
+        Assert.assertTrue(AccDetails.contains("Account Details"), "La page Account Details n'existe pas" );*/
+           }
+=======
+>>>>>>> 20be10897d15e09199badeafc9eb4259eef5f867
 
     public void VerifAccountDetailsPage() {
         WebElement AccountDetails = driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/nav/ul/li[5]/a"));
@@ -216,4 +240,4 @@ public class MyAccountPage {
     }
 */
 
-}
+}}
