@@ -56,6 +56,14 @@ public class ShopPages {
         btClickView.click();
     }
 
+    //Verification des articles existe dans la page shop
+    public void verifArticles(){
+        //WebElement articles = driver.findElement(By.className("products"));
+        WebElement articles = driver.findElement(By.xpath("//ul[contains(@class,'products')]"));
+        Assert.assertTrue(articles.isDisplayed(), "Aucun Produit existe");
+
+    }
+
     //verification des filtres
 
     public void affFiltrePrice() {
