@@ -4,7 +4,7 @@ import commun.Hooks;
 import org.testng.annotations.Test;
 import Pages.MyAccountPage;
 
-public class CreationCompteOk extends Hooks {
+public class T18CreationCompteOk extends Hooks {
 
     String email = "automaticienteam@yopmail.com";
     String pword ="Admin*admin2023";

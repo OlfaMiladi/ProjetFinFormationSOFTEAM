@@ -4,7 +4,7 @@ import Pages.MyAccountPage;
 import commun.Hooks;
 import org.testng.annotations.Test;
 
-public class RememberMe extends Hooks {
+public class T29RememberMe extends Hooks {
 
     String Val2 = "automaticiens@yopmail.com";
     String MPD ="Admin*2023";

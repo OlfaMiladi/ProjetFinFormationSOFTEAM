@@ -4,7 +4,7 @@ import commun.Hooks;
 import org.testng.annotations.Test;
 import Pages.MyAccountPage;
 
-public class ConnexionKo extends Hooks {
+public class T25ConnexionKo extends Hooks {
     String Val2 = "automaticiens@yopmail.com";
     String MPD ="Admin*2017";
 
