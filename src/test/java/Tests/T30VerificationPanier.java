@@ -6,7 +6,7 @@ import Pages.ShopPages;
 import commun.Hooks;
 import org.testng.annotations.Test;
 
-public class Test30 extends Hooks {
+public class T30VerificationPanier extends Hooks {
     String Val2 = "Softeam17@yopmail.com";
     String MPD = "Softeam@1";
 

@@ -77,11 +77,11 @@ public class ShopPages {
 
     }
 
-    public void affPanier(){
+   /* public void affPanier(){
         WebElement mess = driver.findElement(By.xpath("//*[contains(text(), 'Basket Totals')]"));
         Assert.assertTrue(mess.isDisplayed(), "Message non affiché");
 
-    }
+    }*/
 
     // souscribe a la newsletter
 
@@ -119,6 +119,30 @@ public class ShopPages {
        WebElement btcClick = driver.findElement(By.xpath("//img[@title='Android Quick Start Guide']"));
        btcClick.click();
    }
+
+
+
+    /*WebDriverWait w = new WebDriverWait(driver, 5);
+
+
+        try {
+        // identify element
+        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(XpathLiensOrders)));
+        System.out.println("titre est visible");
+    }
+        catch(NoSuchElementException n) {
+        System.out.println("titre is invisible");
+    }*/
+
+    public void verifChampSouscribe(){
+        WebElement champ = driver.findElement(By.xpath("//input[@type='email']"));
+        Assert.assertTrue(champ.isDisplayed(), "Champ non visible");
+    }
+    public void verifBoutonSouscribe(){
+        WebElement bouton = driver.findElement(By.xpath("//input[@type='submit']"));
+        Assert.assertTrue(bouton.isDisplayed(), "Bouton non visible");
+    }
+
 
 
 

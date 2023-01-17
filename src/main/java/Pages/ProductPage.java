@@ -34,7 +34,7 @@ public class ProductPage {
     //affichage nombre d'exemplaire produit
 
     public void affNbreExemplaire() {
-        WebElement nombre = driver.findElement(By.xpath("//*[contains(text(), '8004 in stock')]"));
+        WebElement nombre = driver.findElement(By.xpath("//*[contains(text(), '7983 in stock')]"));
         Assert.assertTrue(nombre.isDisplayed(), "Prix non affiché");
 
     }
@@ -58,7 +58,7 @@ public class ProductPage {
     //affichage du message "has been added to your basket"
     public void affMessAddBasket() {
 
-        WebElement image = driver.findElement(By.xpath("//*[contains(text(), ' “HTML5 WebApp Develpment” has been added to your basket.')]"));
+        WebElement image = driver.findElement(By.xpath("//*[contains(text(),'have been added to your basket')]"));
 
         Assert.assertTrue(image.isDisplayed(), "Message non affiché");
 
@@ -72,6 +72,9 @@ public class ProductPage {
         nombreExemplaire.sendKeys(nbex);
     }
 
-
+    public void clickViewBasketProduct() {
+        WebElement btClickView = driver.findElement(By.xpath("//a[@class='button wc-forward']"));
+        btClickView.click();
+    }
 
     }

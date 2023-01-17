@@ -1,6 +1,7 @@
 package Tests;
 
 import Pages.MyAccountPage;
+import Pages.Panier;
 import Pages.ShopPages;
 import commun.Hooks;
 import org.testng.annotations.Test;
@@ -16,30 +17,34 @@ public class TestAjoutArticles extends Hooks {
 @Test
     public void testAjoutA() {
 
-    MyAccountPage accountConec = new MyAccountPage(driver);
+    //MyAccountPage accountConec = new MyAccountPage(driver);
 
     ShopPages produit = new ShopPages(driver);
+    Panier pan = new Panier(driver);
 
 
-    accountConec.CliqueMyaccount();
-    accountConec.SaisirmailCo(Val2);
-    accountConec.SaisirMDPCo(MPD);
-    accountConec.CliquerBoutonLogin();
+    //accountConec.CliqueMyaccount();
+    //accountConec.SaisirmailCo(Val2);
+    //accountConec.SaisirMDPCo(MPD);
+    //accountConec.CliquerBoutonLogin();
     produit.clickShop();
     produit.affFiltreCategorie();
     produit.affFiltrePrice();
-    produit.clickAddBasket2();
-    produit.clickAddBasket1();
-    //produit.affviewbasket();
-    produit.clickViewBasket();
-    driver.navigate().back();
     produit.clickReadMore();
     produit.affOutStock();
+    driver.navigate().back();
+    produit.clickAddBasket2();
+    produit.clickAddBasket1();
+    produit.clickViewBasket();
+    pan.affPanier();
+
     produit.clickIconeBasket();
-    produit.affPanier();
+    pan.affPanier();
+
     produit.clickShop();
-    produit.saisirSubscribe(mail);
-    produit.clickSubscribe();
+    
+    //produit.saisirSubscribe(mail);
+    //produit.clickSubscribe();
 
 
 
