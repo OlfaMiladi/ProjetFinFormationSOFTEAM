@@ -135,7 +135,6 @@ public class MyAccountPage {
 
     //Vérification de la présence des pages : Dashboard, Orders, Download, Adresses, Account Details, Logout
 
-<<<<<<< HEAD
     public void VerifDashboardPage(){
         WebElement Dashboard= driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/nav/ul/li[1]/a"));
         String DBoard= Dashboard.getText();
@@ -181,13 +180,11 @@ public class MyAccountPage {
     public void AccountDetailsPage(){
         WebElement AccountDetails= driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/nav/ul/li[5]/a"));
         AccountDetails.click();
-=======
     public void AccountDetailsPage(){
         WebElement AccountDetails= driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/nav/ul/li[5]/a"));
         AccountDetails.click();
        /*String AccDetails= AccountDetails.getText();
         Assert.assertTrue(AccDetails.contains("Account Details"), "La page Account Details n'existe pas" );*/
->>>>>>> 6192715987bb60f1b5c5da10890a5787399b42ef
            }
 
     public void VerifLogoutPage(){
@@ -215,4 +212,4 @@ public class MyAccountPage {
     }
 */
 
-}
+}}

@@ -100,6 +100,18 @@ public class Panier {
 
     }
 
+    public void verifieTaxes(){
+        WebElement presenceTaxes = driver.findElement(By.className("tax-rate tax-rate-in-tax-1"));
+        Assert.assertTrue(presenceTaxes.isDisplayed(), "total n'est pas affiché");
+
+    }
+
+    public void verifieTotalCommande(){
+        WebElement presenceTotalcommande = driver.findElement(By.className("order-total"));
+        Assert.assertTrue(presenceTotalcommande.isDisplayed(), "total commande n'est pas affiché");
+
+    }
+
     public void verifiePresencequantite(){
         WebElement Presencequantite = driver.findElement(By.className("product-quantity"));
         Assert.assertTrue(Presencequantite.isDisplayed(), "quantite n'est pas affiché");
