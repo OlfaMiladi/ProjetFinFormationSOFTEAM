@@ -135,6 +135,16 @@ public class MyAccountPage {
 
     //Vérification de la présence des pages : Dashboard, Orders, Download, Adresses, Account Details, Logout
 
+    public void VerifAccountDetailsPage(){
+        WebElement AccountDetails= driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/nav/ul/li[5]/a"));
+        AccountDetails.click();
+        String AccDetails= AccountDetails.getText();
+        Assert.assertTrue(AccDetails.contains("Account Details"), "La page Account Details n'existe pas" );
+           }
+
+
+
+
 /*
     //Souscription à la newsletter
     public void verifChampSouscribe(){
