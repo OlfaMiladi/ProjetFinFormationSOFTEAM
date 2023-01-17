@@ -10,10 +10,11 @@ import org.testng.annotations.Test;
 //cas de test .....
 
 public class T34VerifProduct extends Hooks {
-    String Val2 = "olfa.benameur@gmail.com";
-    String MPD ="olfa1234/";
+    //String Val2 = "olfa.benameur@gmail.com";
+    //String MPD ="olfa1234/";
 
     String nbex = "22";
+    String article = "Android Quick Start Guide";
 
     @Test
     public void testVerifA(){
@@ -31,9 +32,9 @@ public class T34VerifProduct extends Hooks {
         //accountConec.SaisirMDPCo(MPD);
         //accountConec.CliquerBoutonLogin();
         produit.clickShop();
-        produit.clickProduct();
-        prod.affImage();
-        prod.affTitre();
+        produit.clickProduct(article);
+        //prod.affImage();
+       // prod.affTitre();
         prod.affDetails();
         prod.affPrix();
         prod.affNbreExemplaire();

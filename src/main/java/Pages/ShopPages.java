@@ -12,7 +12,6 @@ public class ShopPages {
         this.driver = driver;
     }
 
-
     //cliquer sur la page SHOP
 
     public void clickShop() {
@@ -23,8 +22,8 @@ public class ShopPages {
 
     //verification des articles OUT OF STOCK //
 
-    public void clickReadMore() {
-        WebElement btClickRM = driver.findElement(By.xpath("//a[@data-product_id='163']"));
+    public void clickReadMore(String article) {
+        WebElement btClickRM = driver.findElement(By.xpath("//*[text()[contains(.,'"+article+"')]]"));
         btClickRM.click();
     }
 
@@ -33,7 +32,7 @@ public class ShopPages {
         Assert.assertTrue(message.isDisplayed(), "Message non affiché");
     }
 
-    //Verification des articles en stock (verif du titre view basket!!!)
+    //Verification des articles en stock
 
     public void clickAddBasket2() {
         WebElement btClickAdd = driver.findElement(By.xpath("//a[@data-product_id='165']"));
@@ -47,7 +46,7 @@ public class ShopPages {
 
 
         public void affViewBasket() {
-            WebElement message = driver.findElement(By.xpath("//*[contains(text(), 'View Basket')]"));
+            WebElement message = driver.findElement(By.xpath("//li[contains(@class,'post-182')]/a[@title='View Basket']"));
             Assert.assertTrue(message.isDisplayed(), "Message non affiché");
         }
 
@@ -67,6 +66,18 @@ public class ShopPages {
     public void affFiltreCategorie() {
         WebElement message = driver.findElement(By.xpath("//*[contains(text(), 'Product Categories')]"));
         Assert.assertTrue(message.isDisplayed(), "Message non affiché");
+    }
+
+    public String getxpath (String article){
+
+        return "//li[contains(Text(),article)]";
+    }
+
+    public void clickProduct(String article){
+        WebElement btcClick = driver.findElement(By.xpath("//*[text()[contains(.,'"+article+"')]]"));
+        btcClick.click();
+
+
     }
 
     //cartcontents
@@ -105,11 +116,7 @@ public class ShopPages {
 
     }
 
-   public void clickProduct(){
-       WebElement btcClick = driver.findElement(By.xpath("//a[@href='https://practice.automationtesting.in/product/html5-webapp-develpment/']"));
-       btcClick.click();
 
-   }
    public void clickImageProduit(){
        WebElement btcClick = driver.findElement(By.xpath("//img[@title='Android Quick Start Guide']"));
        btcClick.click();

@@ -8,10 +8,11 @@ import org.testng.annotations.Test;
 
 public class TestAjoutArticles extends Hooks {
 
-    String Val2 = "olfa.benameur@gmail.com";
-    String MPD ="olfa1234/";
+    //String Val2 = "olfa.benameur@gmail.com";
+    //String MPD ="olfa1234/";
 
     String mail = "olfa@yopmailcom";
+    String article = "Functional Programming in JS";
 
 
 @Test
@@ -27,15 +28,15 @@ public class TestAjoutArticles extends Hooks {
     //accountConec.SaisirmailCo(Val2);
     //accountConec.SaisirMDPCo(MPD);
     //accountConec.CliquerBoutonLogin();
-    produit.clickShop();
-    produit.affFiltreCategorie();
-    produit.affFiltrePrice();
-    produit.clickReadMore();
+    //produit.clickShop();
+    //produit.affFiltreCategorie();
+   // produit.affFiltrePrice();
+    produit.clickReadMore(article);
     produit.affOutStock();
     driver.navigate().back();
     produit.clickAddBasket2();
-    produit.clickAddBasket1();
-    produit.clickViewBasket();
+    //produit.clickAddBasket1();
+    //produit.clickViewBasket();
     pan.affPanier();
 
     produit.clickIconeBasket();

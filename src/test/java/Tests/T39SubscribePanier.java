@@ -7,7 +7,7 @@ import Pages.ShopPages;
 import commun.Hooks;
 import org.testng.annotations.Test;
 
-public class Test39 extends Hooks {
+public class T39SubscribePanier extends Hooks {
 
     String Val2 = "Softeam17@yopmail.com";
     String MPD ="Softeam@1";
@@ -30,6 +30,7 @@ public class Test39 extends Hooks {
         produit.clickViewBasket();
         Panier monpanier = new Panier(driver);
         monpanier.verifiechampssubscribehere("Softeam17@yopmail.com");
+
     }
 
 }
