@@ -22,21 +22,6 @@ public class MyAccountPage {
 
     }
 
-    //Creation de compte reussite
-    public void Saisirmail(String Val1) {
-        WebElement AdresseMAil = driver.findElement(By.id("reg_email"));
-        AdresseMAil.sendKeys(Val1);
-    }
-
-    public void SaisirMDP(String MDP) {
-        WebElement passeword = driver.findElement(By.id("reg_password"));
-        passeword.sendKeys(MDP);
-    }
-
-    public void CliquerBoutonResgister() {
-        WebElement Register = driver.findElement(By.name("register"));
-        Register.click();
-    }
 
     //Connexion au compte
 
@@ -64,35 +49,6 @@ public class MyAccountPage {
         Assert.assertTrue(MsgError.contains("Error: the password you entered for the username "), "Le message n'est pas affiché");
     }
 
-        /*
-        if (MsgError.equals("Error: the password you entered for the username automaticiens@yopmail.com is incorrect. Lost your password?")) {
-
-            System.out.println("Le message Error est affiché correctement");
-        } else {
-            System.out.println("Le text n'est pas affiché correctement");
-        }
-                //System.out.println(MsgError);
-         */
-
-
-    //Le bon fonctionnement de la case à cocher REMEMBER ME
-
-    public void FonctionRememberMe() {
-        WebElement RememberMe = driver.findElement(By.xpath("//*[@id=\"rememberme\"]"));
-        RememberMe.click();
-    }
-
-    public void Verifmailrempli() {
-        WebElement MailRempli = driver.findElement(By.id("username"));
-
-        String expectedTitle = "automaticiens@yopmail.com";
-        String originalTitle = MailRempli.getText();
-        Assert.assertEquals(originalTitle, expectedTitle, "E-mail non affiché");
-        //System.out.println(originalTitle);
-        //originalTitle.contains(expectedTitle);
-        //Assert.assertTrue(MailRempli.isDisplayed(), "E-mail non affiché");
-
-    }
 
     //Déconnexion du compte
 
@@ -192,13 +148,6 @@ public class MyAccountPage {
     }
 
 
-
-   /* public void VerifAccountDetailsPage() {
-        WebElement AccountDetails = driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/nav/ul/li[5]/a"));
-        String AccDetails = AccountDetails.getText();
-        Assert.assertTrue(AccDetails.contains("Account Details"), "La page Account Details n'existe pas");
-    }*/
-
     public void AccountDetailsPage() {
         WebElement AccountDetails = driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/nav/ul/li[5]/a"));
         AccountDetails.click();
@@ -215,19 +164,11 @@ public class MyAccountPage {
         Logout.click();
     }
 
+    public void VerifIconePanier(){
 
-
-
-/*
-    //Souscription à la newsletter
-    public void verifChampSouscribe(){
-        WebElement champ = driver.findElement(By.xpath("//*[@id=\"mc4wp-form-1\"]/div[1]/p[1]/input"));
-        Assert.assertTrue(champ.isDisplayed(), "Champ non visible");
+        WebElement IconePanier = driver.findElement(By.className("wpmenucart-icon-shopping-cart-0"));
+        IconePanier.isEnabled();
     }
-    public void verifBoutonSouscribe(){
-        WebElement bouton = driver.findElement(By.xpath("//input[@type='submit']"));
-        Assert.assertTrue(bouton.isDisplayed(), "Bouton non visible");
-    }*/
 
 
 }

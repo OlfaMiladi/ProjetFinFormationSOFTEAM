@@ -7,8 +7,6 @@ import org.testng.Assert;
 
 public class ProductPage {
     WebDriver driver;
-    String article = "Android Quick Start Guide";
-
 
     public ProductPage(WebDriver driver) {
         this.driver = driver;
@@ -45,17 +43,6 @@ public class ProductPage {
         Assert.assertTrue(nombre.isDisplayed(), "Prix non affiché");
 
     }
-
-
-        //affichage image
-
-        //public void affImage() {
-            //WebElement image = driver.findElement(By.xpath("//*[@id='product-182']/div[1]/a/img"));
-            //WebElement image = driver.findElement(By.id("product-169"));
-           // Assert.assertTrue(image.isDisplayed(), "Image non affiché");
-       // }
-
-        //verification bouton add to basket
 
     public void clickAddBouton(){
 

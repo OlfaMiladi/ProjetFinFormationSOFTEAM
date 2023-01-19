@@ -1,7 +1,7 @@
 package Tests;
 
 import Pages.MyAccountPage;
-import Pages.Panier;
+import Pages.PanierPage;
 
 import Pages.ShopPages;
 import commun.Hooks;
@@ -27,7 +27,6 @@ public class T39SubscribePanier extends Hooks {
         produit.clickShop();
         produit.clickAddBasket1();
         produit.clickViewBasket();
-        Panier monpanier = new Panier(driver);
         produit.verifTitreSouscribe();
         produit.verifChampSouscribe();
         produit.verifBoutonSouscribe();

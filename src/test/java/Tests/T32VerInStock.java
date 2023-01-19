@@ -1,6 +1,6 @@
 package Tests;
 
-import Pages.Panier;
+import Pages.PanierPage;
 import Pages.ShopPages;
 import commun.Hooks;
 import org.testng.annotations.Test;
@@ -11,7 +11,7 @@ public class T32VerInStock extends Hooks {
     public void testStock() {
 
         ShopPages produit = new ShopPages(driver);
-        Panier pan = new Panier(driver);
+        PanierPage pan = new PanierPage(driver);
 
         produit.clickShop();
         produit.clickAddBasket1();

@@ -1,7 +1,7 @@
 package Tests;
 
 import Pages.MyAccountPage;
-import Pages.Panier;
+import Pages.PanierPage;
 import Pages.ShopPages;
 import commun.Hooks;
 import org.testng.annotations.Test;
@@ -14,7 +14,7 @@ public class T30VerificationPanier extends Hooks {
     public void consultationpanier() {
         MyAccountPage accountConec = new MyAccountPage(driver);
         ShopPages produit = new ShopPages(driver);
-        Panier monproduit = new Panier(driver);
+        PanierPage monproduit = new PanierPage(driver);
         accountConec.CliqueMyaccount();
         accountConec.SaisirmailCo(Val2);
         accountConec.SaisirMDPCo(MPD);

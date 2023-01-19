@@ -1,7 +1,7 @@
 package Tests;
 
 import Pages.MyAccountPage;
-import Pages.Panier;
+import Pages.PanierPage;
 import Pages.ShopPages;
 import commun.Hooks;
 import org.testng.annotations.Test;
@@ -16,7 +16,7 @@ public class T36SubscribeShop extends Hooks {
     public void testVerifierSubscrireIci (){
         MyAccountPage accountConec = new MyAccountPage(driver);
         ShopPages produit = new ShopPages(driver);
-        Panier monpanier = new Panier(driver);
+        PanierPage monpanier = new PanierPage(driver);
         accountConec.CliqueMyaccount();
         accountConec.SaisirmailCo(Val2);
         accountConec.SaisirMDPCo(MPD);
