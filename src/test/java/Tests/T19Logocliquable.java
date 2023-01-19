@@ -2,6 +2,7 @@ package Tests;
 
 
 import Pages.*;
+import com.beust.ah.A;
 import commun.Hooks;
 import org.testng.annotations.Test;
 
@@ -18,6 +19,8 @@ public class T19Logocliquable extends Hooks {
         MyAccountPage Account = new MyAccountPage(driver);
         Account.CliqueMyaccount();
         Accueil.VerifLogo();
+        Accueil.Logoclick();
+        driver.navigate().back();
 
         MyAccountDetailPage DetailPage = new MyAccountDetailPage(driver);
         Account.SaisirmailCo(Val2);
@@ -25,19 +28,20 @@ public class T19Logocliquable extends Hooks {
         Account.CliquerBoutonLogin();
         Account.AccountDetailsPage();
         Accueil.VerifLogo();
+        Accueil.Logoclick();
+        driver.navigate().back();
 
         ShopPages Shop = new ShopPages(driver);
         Shop.clickShop();
         Accueil.VerifLogo();
-        Shop.clickAddBasket1();
+        Accueil.Logoclick();
+        driver.navigate().back();
 
         Panier Pnier = new Panier(driver);
-        Shop.clickViewBasket();
+        Shop.clickIconeBasket();
         Pnier.affPanier();
         Accueil.VerifLogo();
+        Accueil.Logoclick();
 
-       /*ProductPage Product = new ProductPage(driver);
-        Product.affDetails();
-        Accueil.VerifLogo();*/
     }
 }

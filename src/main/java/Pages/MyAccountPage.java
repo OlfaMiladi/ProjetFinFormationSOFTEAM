@@ -215,6 +215,11 @@ public class MyAccountPage {
         Logout.click();
     }
 
+    public void VerifIconePanier(){
+
+        WebElement IconePanier = driver.findElement(By.className("wpmenucart-icon-shopping-cart-0"));
+        IconePanier.isEnabled();
+    }
 
 
 
