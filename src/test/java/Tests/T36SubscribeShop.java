@@ -15,15 +15,17 @@ public class T36SubscribeShop extends Hooks {
     @Test
     public void testVerifierSubscrireIci (){
         MyAccountPage accountConec = new MyAccountPage(driver);
-
         ShopPages produit = new ShopPages(driver);
+        Panier monpanier = new Panier(driver);
         accountConec.CliqueMyaccount();
         accountConec.SaisirmailCo(Val2);
         accountConec.SaisirMDPCo(MPD);
         accountConec.CliquerBoutonLogin();
         produit.clickShop();
-        Panier monpanier = new Panier(driver);
-        monpanier.verifiechampssubscribehere("Softeam17@yopmail.com");
+        produit.verifTitreSouscribe();
+        produit.verifChampSouscribe();
+        produit.verifBoutonSouscribe();
+
 
     }
 }

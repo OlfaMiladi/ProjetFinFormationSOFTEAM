@@ -14,7 +14,7 @@ public class T34VerifProduct extends Hooks {
     //String MPD ="olfa1234/";
 
     String nbex = "22";
-    String article = "Android Quick Start Guide";
+    String article = "HTML5 WebApp Develpment";
 
     @Test
     public void testVerifA(){
@@ -31,12 +31,12 @@ public class T34VerifProduct extends Hooks {
         //accountConec.SaisirmailCo(Val2);
         //accountConec.SaisirMDPCo(MPD);
         //accountConec.CliquerBoutonLogin();
+
         produit.clickShop();
-        produit.clickProduct(article);
-        //prod.affImage();
-       // prod.affTitre();
-        prod.affDetails();
+        produit.clickTitreProduct(article);
+        prod.affTitre(article);
         prod.affPrix();
+        prod.affDetails();
         prod.affNbreExemplaire();
         prod.saisirNbreExVoulu(nbex);
         prod.clickAddBouton();

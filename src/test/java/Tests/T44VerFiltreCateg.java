@@ -12,6 +12,8 @@ public class T44VerFiltreCateg extends Hooks {
         ShopPages produit = new ShopPages(driver);
         produit.clickShop();
         produit.affFiltreCategorie();
+        produit.clickFiltreHTML();
+        produit.veriNbDansFiltreHTML();
 
     }
 

@@ -23,6 +23,5 @@ public class T85ChangementMPAccount extends Hooks {
         mesinformation.ConfirmerNouveauMdp("Softeam@4");
         mesinformation.EnregitrerModificationMps();
         mesinformation.Verifiermessage3();
-
     }
 }

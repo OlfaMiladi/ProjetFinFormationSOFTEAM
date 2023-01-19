@@ -6,13 +6,19 @@ import org.testng.annotations.Test;
 
 public class T16SouscriptionKO extends Hooks {
 
-
+String mail="olfa.benameur@com";
 
     @Test
-    public void testVerifArticles(){
+    public void testSouscriptionKO(){
         ShopPages produit = new ShopPages(driver);
-        produit.clickShop();
-        produit.verifArticles();
+        produit.verifTitreSouscribe();
+        produit.verifChampSouscribe();
+        produit.saisirSubscribe(mail);
+        produit.clickSubscribe();
+        produit.affMessErreur();
+
+
     }
+
 
 }

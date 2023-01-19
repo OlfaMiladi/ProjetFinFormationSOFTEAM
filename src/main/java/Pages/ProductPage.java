@@ -7,6 +7,8 @@ import org.testng.Assert;
 
 public class ProductPage {
     WebDriver driver;
+    String article = "Android Quick Start Guide";
+
 
     public ProductPage(WebDriver driver) {
         this.driver = driver;
@@ -29,10 +31,12 @@ public class ProductPage {
 
     //affichage titre produit
 
-    public void affTitre() {
-        WebElement titre = driver.findElement(By.xpath("//h1[text()=\"Android Quick Start Guide\"]"));
+
+    public void affTitre(String article) {
+       WebElement titre =  driver.findElement(By.xpath("//h1[@itemprop='name'][contains(.,'" +article+ "')]"));
         Assert.assertTrue(titre.isDisplayed(), "Titre non affiché");
     }
+
 
     //affichage nombre d'exemplaire produit
 
@@ -41,6 +45,7 @@ public class ProductPage {
         Assert.assertTrue(nombre.isDisplayed(), "Prix non affiché");
 
     }
+
 
         //affichage image
 

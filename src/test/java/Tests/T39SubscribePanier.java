@@ -28,7 +28,10 @@ public class T39SubscribePanier extends Hooks {
         produit.clickAddBasket1();
         produit.clickViewBasket();
         Panier monpanier = new Panier(driver);
-        monpanier.verifiechampssubscribehere("Softeam17@yopmail.com");
+        produit.verifTitreSouscribe();
+        produit.verifChampSouscribe();
+        produit.verifBoutonSouscribe();
+
 
     }
 

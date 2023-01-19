@@ -1,6 +1,5 @@
 package Tests;
 
-import Pages.Panier;
 import Pages.ProductPage;
 import Pages.ShopPages;
 import commun.Hooks;
@@ -9,6 +8,7 @@ import org.testng.annotations.Test;
 public class T46VerifDetails extends Hooks {
 
 String article = "Android Quick Start Guide";
+String prix = "450.00";
     @Test
     public void testDetails() {
 
@@ -16,17 +16,17 @@ String article = "Android Quick Start Guide";
         ProductPage prod = new ProductPage(driver);
 
         produit.clickShop();
-        produit.clickProduct(article);
-
-        //produit.clickImageProduit();
-        prod.affTitre();
-        //prod.affImage();
+        produit.verifArticles();
+        produit.verifImageProduit();
+        produit.verifTitreProduit(article);
+        produit.verifPrixProduit();
+        produit.clickTitreProduct(article);
+        prod.affTitre(article);
         prod.affDetails();
-        prod.affPrix();
-
-
-        //produit.clickTitreProduit();
-
+        driver.navigate().back();
+        produit.clickPrixProduct(prix);
+        prod.affTitre(article);
+        prod.affDetails();
 
     }
 }

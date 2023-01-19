@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
+import java.util.List;
+
 public class ShopPages {
     WebDriver driver;
 
@@ -23,7 +25,7 @@ public class ShopPages {
     //verification des articles OUT OF STOCK //
 
     public void clickReadMore(String article) {
-        WebElement btClickRM = driver.findElement(By.xpath("//*[text()[contains(.,'"+article+"')]]"));
+        WebElement btClickRM = driver.findElement(By.xpath("//*[text()[contains(.,'" + article + "')]]"));
         btClickRM.click();
     }
 
@@ -45,10 +47,10 @@ public class ShopPages {
     }
 
 
-        public void affViewBasket() {
-            WebElement message = driver.findElement(By.xpath("//li[contains(@class,'post-182')]/a[@title='View Basket']"));
-            Assert.assertTrue(message.isDisplayed(), "Message non affiché");
-        }
+    public void affViewBasket() {
+        WebElement message = driver.findElement(By.xpath("//li[contains(@class,'post-182')]/a[@title='View Basket']"));
+        Assert.assertTrue(message.isDisplayed(), "Message non affiché");
+    }
 
 
     public void clickViewBasket() {
@@ -56,67 +58,51 @@ public class ShopPages {
         btClickView.click();
     }
 
-    //Verification des articles existe dans la page shop
-    public void verifArticles(){
-        //WebElement articles = driver.findElement(By.className("products"));
+    //Verification des articles existent dans la page shop
+    public void verifArticles() {
         WebElement articles = driver.findElement(By.xpath("//ul[contains(@class,'products')]"));
         Assert.assertTrue(articles.isDisplayed(), "Aucun Produit existe");
-
     }
 
     //verification des filtres
-
     public void affFiltrePrice() {
         WebElement message = driver.findElement(By.xpath("//*[contains(text(), 'Filter by price')]"));
         Assert.assertTrue(message.isDisplayed(), "Message non affiché");
     }
-
     public void affFiltreCategorie() {
         WebElement message = driver.findElement(By.xpath("//*[contains(text(), 'Product Categories')]"));
         Assert.assertTrue(message.isDisplayed(), "Message non affiché");
     }
-
-    public String getxpath (String article){
-
-        return "//li[contains(Text(),article)]";
+    public void clickFiltreHTML() {
+        WebElement btClickHTML = driver.findElement(By.xpath("//a[@href='https://practice.automationtesting.in/product-category/html/']"));
+        //System.out.println(btClickView.getText());
+        btClickHTML.click();
     }
-
-    public void clickProduct(String article){
-        WebElement btcClick = driver.findElement(By.xpath("//*[text()[contains(.,'"+article+"')]]"));
+    public void veriNbDansFiltreHTML() {
+        List<WebElement> listProduct = driver.findElements(By.xpath("//ul[@class='products masonry-done']/li"));
+        System.out.println(listProduct.size());
+        Assert.assertEquals(listProduct.size(), 3);
+    }
+    public void clickTitreProduct(String article) {
+        WebElement btcClick = driver.findElement(By.xpath("//h3[text()[contains(.,'" + article + "')]]"));
         btcClick.click();
-
-
     }
+    public void clickPrixProduct(String prix) {
+        WebElement btcClick = driver.findElement(By.xpath("//span[text()[contains(.,'" + prix + "')]]"));
+        btcClick.click();
+    }
+
 
     //cartcontents
-    public void clickIconeBasket(){
+    public void clickIconeBasket() {
 
         WebElement btClickIcone = driver.findElement(By.xpath("//span[@class='cartcontents']"));
         btClickIcone.click();
 
     }
 
-   /* public void affPanier(){
-        WebElement mess = driver.findElement(By.xpath("//*[contains(text(), 'Basket Totals')]"));
-        Assert.assertTrue(mess.isDisplayed(), "Message non affiché");
-
-    }*/
-
-    // souscribe a la newsletter
-
-    public void saisirSubscribe(String mail){
-        WebElement email = driver.findElement(By.xpath("//input[@type='email']"));
-        email.sendKeys(mail);
-    }
-
-    public void clickSubscribe(){
-
-        WebElement btCSub = driver.findElement(By.xpath("//input[@type='submit']"));
-        btCSub.click();
-
-    }
     //affichage du message d'erreur du newsletter
-    public void affMessErreur(){
+    public void affMessErreur() {
         //WebElement message = driver.findElement(By.xpath("//*[contains(text(), 'Please provide a valid email ')]"));
 
         WebElement message = driver.findElement(By.xpath("//*[contains(text(), 'Please provide a valid email address.')]"));
@@ -124,41 +110,53 @@ public class ShopPages {
 
     }
 
-
-   public void clickImageProduit(){
-       WebElement btcClick = driver.findElement(By.xpath("//img[@title='Android Quick Start Guide']"));
-       btcClick.click();
-
-   }
-   public void clickTitreProduit(){
-       WebElement btcClick = driver.findElement(By.xpath("//img[@title='Android Quick Start Guide']"));
-       btcClick.click();
-   }
-
-
-
-    /*WebDriverWait w = new WebDriverWait(driver, 5);
-
-
-        try {
-        // identify element
-        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(XpathLiensOrders)));
-        System.out.println("titre est visible");
+    //Verification de l'image du produit existe
+    public void verifImageProduit() {
+        WebElement verif = driver.findElement(By.xpath("//img[@title='Android Quick Start Guide']"));
+        Assert.assertTrue(verif.isDisplayed(), "Image non visible");
     }
-        catch(NoSuchElementException n) {
-        System.out.println("titre is invisible");
-    }*/
+    //Verification du titre du produit existe
+    public void verifTitreProduit(String article) {
+        WebElement verif = driver.findElement(By.xpath("//*[contains(.,'" +article+ "')]"));
+        Assert.assertTrue(verif.isDisplayed(), "Titre non visible");
+    }
 
-    public void verifChampSouscribe(){
+
+    //Verification du prix du produit existe
+    public void verifPrixProduit() {
+        WebElement prix = driver.findElement(By.xpath("//span[@class='price']"));
+        Assert.assertTrue(prix.isDisplayed(), "Prix non visible");
+    }
+
+
+
+
+   //Verification newsletter
+
+    public void verifTitreSouscribe() {
+        WebElement titreSub = driver.findElement(By.xpath("//h4[@class='widgettitle'][contains(text(), 'Subscribe Here')]"));
+        Assert.assertTrue(titreSub.isDisplayed(), "Titre non visible");
+    }
+    public void verifChampSouscribe() {
         WebElement champ = driver.findElement(By.xpath("//input[@type='email']"));
         Assert.assertTrue(champ.isDisplayed(), "Champ non visible");
     }
-    public void verifBoutonSouscribe(){
+
+    public void verifBoutonSouscribe() {
         WebElement bouton = driver.findElement(By.xpath("//input[@type='submit']"));
         Assert.assertTrue(bouton.isDisplayed(), "Bouton non visible");
     }
+    public void saisirSubscribe(String mail) {
+        WebElement email = driver.findElement(By.xpath("//input[@type='email']"));
+        email.sendKeys(mail);
+    }
 
+    public void clickSubscribe() {
 
+        WebElement btCSub = driver.findElement(By.xpath("//input[@type='submit']"));
+        btCSub.click();
+
+    }
 
 
 }

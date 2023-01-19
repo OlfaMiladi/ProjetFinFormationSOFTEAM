@@ -3,7 +3,6 @@ package Tests;
 import Pages.MyAccountPage;
 import Pages.Panier;
 import Pages.ShopPages;
-import com.google.common.eventbus.Subscribe;
 import commun.Hooks;
 import org.testng.annotations.Test;
 
@@ -17,13 +16,16 @@ public class T38SubscribeAccount extends Hooks {
     public void testVerifierSubscrireIci(){
         MyAccountPage accountConec = new MyAccountPage(driver);
         MyAccountPage subscribe = new MyAccountPage(driver);
+        ShopPages produit = new ShopPages(driver);
         Panier monpanier = new Panier(driver);
         accountConec.CliqueMyaccount();
         accountConec.SaisirmailCo(Val2);
         accountConec.SaisirMDPCo(MPD);
         accountConec.CliquerBoutonLogin();
         subscribe.CliqueMyaccount();
-        monpanier.verifiechampssubscribehere("Softeam17@yopmail.com");
+        produit.verifTitreSouscribe();
+        produit.verifChampSouscribe();
+        produit.verifBoutonSouscribe();
 
 
     }
